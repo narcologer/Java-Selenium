@@ -1,0 +1,19 @@
+На странице: http://qa.skillbox.ru/module09/practice4/Kontakty/index.html
+1. Локатор кнопки "Отправить"
+WebElement element = driver.findElement(By.xpath("//input[@value='Отправить']"));
+2. Локатор поля с текстом "Опишите свои впечатления в нескольких предложениях"
+WebElement element = driver.findElement(By.name("comments"));
+3. Локатор поля для ввода имени. Локатор должен искать по атрибуту placeholder. Используйте CSS
+WebElement element = driver.findElement(By.cssSelector("[placeholder='Имя']"));
+4. Локатор поля для ввода E-mail. Локатор должен искать по атрибуту name, используйте Xpath.
+WebElement element = driver.findElement(By.xpath("//input[@name='email']"));
+5. Локатор кнопки в меню "Интересные статьи". Внимание: этот локатор-исключением, по нему у вас будет искать 2 элемента, и это нормально. 
+WebElement element = driver.findElement(By.linkText("Интересные статьи"));
+
+На странице: http://qa.skillbox.ru/module09/practice4/Catalog/index.html
+6. Локатор элемента <div class="catalog"> с указанием ближайшего родительского элемента в локаторе. Используйте CSS или Xpath.
+WebElement element = driver.findElement(By.cssSelector("[class='catalog']"));
+WebElement parent = element.findElement(By.xpath("./.."));
+7. Локатор !второго! элемента <div class="product-block">. Используйте CSS или XPath.
+WebElement element = driver.findElement(By.cssSelector("[class='catalog']"));
+WebElement child = element.findElement(By.xpath("./div[2]"));
